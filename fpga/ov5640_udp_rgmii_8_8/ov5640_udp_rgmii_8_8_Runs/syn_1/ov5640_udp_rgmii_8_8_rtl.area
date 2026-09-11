@@ -1,0 +1,48 @@
+standard
+***Report Model: ov5640_udp_rgmii Device: DR1M90GEG484***
+
+IO Statistics
+#IO                        23
+  #input                   13
+  #output                   9
+  #inout                    1
+
+Gate Statistics
+#Basic gates             1028
+  #and                    149
+  #nand                     0
+  #or                      77
+  #nor                      0
+  #xor                    268
+  #xnor                     0
+  #buf                      0
+  #not                    119
+  #bufif1                   1
+  #MX21                    54
+  #FADD                     0
+  #DFF                    360
+  #LATCH                    0
+#MACRO_ADD                 28
+#MACRO_EQ                  41
+#MACRO_MUX                238
+#MACRO_OTHERS               9
+
+Report Hierarchy Area:
++----------------------------------------------------------------------------------------------------+
+|Instance                                  |Module                           |gates  |seq    |macros |
++----------------------------------------------------------------------------------------------------+
+|top                                       |ov5640_udp_rgmii                 |668    |360    |78     |
+|  Camera_ETH_Formator                     |Camera_ETH_Formator              |4      |44     |3      |
+|  UDP_Send                                |UDP_Send                         |422    |221    |35     |
+|    CRC32_D8                              |CRC32_D8                         |247    |32     |0      |
+|    async_fifo                            |async_fifo                       |59     |115    |6      |
+|      async_fifo_ctrl_inst                |async_fifo_ctrl                  |59     |115    |5      |
+|      dpram_inst                          |dpram                            |0      |0      |1      |
+|  camera_init                             |camera_init                      |238    |95     |33     |
+|    i2c_control                           |i2c_control                      |218    |61     |25     |
+|      i2c_bit_shift                       |i2c_bit_shift                    |143    |21     |14     |
+|    ov5640_init_table_rgb_inst            |ov5640_init_table_rgb            |0      |0      |1      |
+|  gmii_to_rgmii                           |gmii_to_rgmii                    |0      |0      |6      |
+|  pll                                     |pll                              |0      |0      |1      |
+|    DR1_PHY_PLL_WRAPERR_c27ca599f4ef_Inst |DR1_PHY_PLL_WRAPERR_c27ca599f4ef |0      |0      |0      |
++----------------------------------------------------------------------------------------------------+

@@ -1,0 +1,51 @@
+standard
+***Report Model: ov5640_udp_rgmii Device: DR1M90GEG484***
+
+IO Statistics
+#IO                        23
+  #input                   13
+  #output                   9
+  #inout                    1
+
+Utilization Statistics
+#lut                      525
+  #lut1                     3
+  #lut2                   107
+  #lut3                    59
+  #lut4                    68
+  #lut5                    69
+  #lut6                   104
+  #1-bit adder            115
+#reg                      360   out of 104960    0.34%
+  #dff                    360
+  #latch                    0
+#f7mux                      0   out of  26240    0.00%
+#f8mux                      0   out of  13120    0.00%
+#dsp                        0   out of    240    0.00%
+#eram                       5   out of    280    1.79%
+  #eram20k                  5
+  #fifo20k                  0
+#pad                       23   out of    201   11.44%
+  #ireg                     0
+  #oreg                     6
+  #treg                     0
+#pll                        1   out of      8   12.50%
+
+Report Hierarchy Area:
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|Instance                                  |Module                           |lut     |ripple  |seq     |eram    |dsp     |dram     |shifter |f7mux   |f8mux   |pll     |adc    |soc     |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|top                                       |ov5640_udp_rgmii                 |410     |115     |366     |5       |0       |0        |0       |0       |0       |1       |0      |0       |
+|  Camera_ETH_Formator                     |Camera_ETH_Formator              |35      |17      |44      |0       |0       |0        |0       |0       |0       |0       |0      |0       |
+|  UDP_Send                                |UDP_Send                         |243     |56      |221     |4       |0       |0        |0       |0       |0       |0       |0      |0       |
+|    CRC32_D8                              |CRC32_D8                         |37      |0       |32      |0       |0       |0        |0       |0       |0       |0       |0      |0       |
+|    async_fifo                            |async_fifo                       |62      |43      |115     |4       |0       |0        |0       |0       |0       |0       |0      |0       |
+|      async_fifo_ctrl_inst                |async_fifo_ctrl                  |62      |43      |115     |0       |0       |0        |0       |0       |0       |0       |0      |0       |
+|      dpram_inst                          |dpram                            |0       |0       |0       |4       |0       |0        |0       |0       |0       |0       |0      |0       |
+|  camera_init                             |camera_init                      |131     |42      |95      |1       |0       |0        |0       |0       |0       |0       |0      |0       |
+|    i2c_control                           |i2c_control                      |104     |20      |61      |0       |0       |0        |0       |0       |0       |0       |0      |0       |
+|      i2c_bit_shift                       |i2c_bit_shift                    |53      |0       |21      |0       |0       |0        |0       |0       |0       |0       |0      |0       |
+|    ov5640_init_table_rgb_inst            |ov5640_init_table_rgb            |0       |0       |0       |1       |0       |0        |0       |0       |0       |0       |0      |0       |
+|  pll                                     |pll                              |1       |0       |0       |0       |0       |0        |0       |0       |0       |1       |0      |0       |
+|    DR1_PHY_PLL_WRAPERR_c27ca599f4ef_Inst |DR1_PHY_PLL_WRAPERR_c27ca599f4ef |1       |0       |0       |0       |0       |0        |0       |0       |0       |1       |0      |0       |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+

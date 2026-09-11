@@ -1,0 +1,102 @@
+standard
+***Report Model: ov5640_udp_rgmii Device: DR1M90GEG484***
+
+Design Statistics
+#IO                        23
+  #input                   13
+  #output                   9
+  #inout                    1
+#lut6                     372   out of  52480    0.71%
+#reg                      366
+  #slice reg              360   out of 104960    0.34%
+  #pad reg                  6
+
+Utilization Statistics
+#slice                    394   out of  52480    0.75%
+  #used ram                 0
+    #dram lut               0
+    #shifter lut            0
+  #used logic             394
+    #with luts            278
+    #with adder            94
+    #reg only              22
+#feedthrough               99
+#f7mux                      0   out of  26240    0.00%
+#f8mux                      0   out of  13120    0.00%
+#dsp                        0   out of    240    0.00%
+#eram                       5   out of    280    1.79%
+  #eram20k                  5
+  #fifo20k                  0
+#pad                       23   out of    201   11.44%
+#pll                        1   out of      8   12.50%
+#gclk                       5   out of     32   15.62%
+#lclk                       0   out of     16    0.00%
+#mlclk                      0   out of      8    0.00%
+#ioclk                      0   out of     16    0.00%
+
+Clock Resource Statistics
+Index     ClockNet             Type            DriverType         Driver                                                           ClockFanout
+#1        clk_125m             InferredGclk    pll                pll/DR1_PHY_PLL_WRAPERR_c27ca599f4ef_Inst/u_DR1_PHY_PLL.clkc1    4
+#2        camera_pclk_dup_1    InferredGclk    io                 camera_pclk_syn_2.di                                             3
+#3        clk_dup_1            InferredGclk    io                 clk_syn_2.di                                                     2
+#4        camera_xclk_dup_1    InferredGclk    pll                pll/DR1_PHY_PLL_WRAPERR_c27ca599f4ef_Inst/u_DR1_PHY_PLL.clkc3    1
+#5        pll/clk0_buf         UserGclk        pll                pll/DR1_PHY_PLL_WRAPERR_c27ca599f4ef_Inst/u_DR1_PHY_PLL.clkc0    1
+
+
+Detailed IO Report
+
+       Name         Direction    Location    IOStandard    IOType    DriveStrength    PullType    PackReg  
+  camera_data[7]      INPUT        W21        LVCMOS33      HRIO          N/A          PULLUP      NONE    
+  camera_data[6]      INPUT        W20        LVCMOS33      HRIO          N/A          PULLUP      NONE    
+  camera_data[5]      INPUT        V19        LVCMOS33      HRIO          N/A          PULLUP      NONE    
+  camera_data[4]      INPUT        V18        LVCMOS33      HRIO          N/A          PULLUP      NONE    
+  camera_data[3]      INPUT        Y21        LVCMOS33      HRIO          N/A          PULLUP      NONE    
+  camera_data[2]      INPUT        Y20        LVCMOS33      HRIO          N/A          PULLUP      NONE    
+  camera_data[1]      INPUT        V17        LVCMOS33      HRIO          N/A          PULLUP      NONE    
+  camera_data[0]      INPUT        U17        LVCMOS33      HRIO          N/A          PULLUP      NONE    
+   camera_href        INPUT        T21        LVCMOS33      HRIO          N/A          PULLUP      NONE    
+   camera_pclk        INPUT        Y18        LVCMOS33      HRIO          N/A          PULLUP      NONE    
+   camera_vsync       INPUT        U21        LVCMOS33      HRIO          N/A          PULLUP      NONE    
+       clk            INPUT         Y9        LVCMOS33      HRIO          N/A          PULLUP      NONE    
+      rst_n           INPUT        H18        LVCMOS33      HRIO          N/A          PULLUP      NONE    
+   camera_sclk       OUTPUT        U20        LVCMOS33      HRIO           8            NONE       NONE    
+   camera_xclk       OUTPUT        U22        LVCMOS33      HRIO           8            NONE       NONE    
+     eth_gtxc        OUTPUT        W16        LVCMOS33      HRIO           8            NONE       DDRX1   
+    eth_rst_n        OUTPUT        Y19        LVCMOS33      HRIO           8            NONE       NONE    
+    eth_txd[3]       OUTPUT        V20        LVCMOS33      HRIO           8            NONE       DDRX1   
+    eth_txd[2]       OUTPUT        AA18       LVCMOS33      HRIO           8            NONE       DDRX1   
+    eth_txd[1]       OUTPUT        Y16        LVCMOS33      HRIO           8            NONE       DDRX1   
+    eth_txd[0]       OUTPUT        W18        LVCMOS33      HRIO           8            NONE       DDRX1   
+     eth_txen        OUTPUT        U15        LVCMOS33      HRIO           8            NONE       DDRX1   
+   camera_sdat        INOUT        T22        LVCMOS33      HRIO           8           PULLUP      NONE    
+
+Report Hierarchy Area:
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|Instance                                  |Module                           |lut     |ripple  |seq     |eram    |dsp     |dram lut |shifter lut |f7mux   |f8mux   |pll     |adc    |soc     |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|top                                       |ov5640_udp_rgmii                 |278     |94      |366     |5       |0       |0        |0           |0       |0       |1       |0      |0       |
+|  Camera_ETH_Formator                     |Camera_ETH_Formator              |19      |16      |44      |0       |0       |0        |0           |0       |0       |0       |0      |0       |
+|  UDP_Send                                |UDP_Send                         |166     |38      |221     |4       |0       |0        |0           |0       |0       |0       |0      |0       |
+|    CRC32_D8                              |CRC32_D8                         |25      |0       |32      |0       |0       |0        |0           |0       |0       |0       |0      |0       |
+|    async_fifo                            |async_fifo                       |50      |26      |115     |4       |0       |0        |0           |0       |0       |0       |0      |0       |
+|      async_fifo_ctrl_inst                |async_fifo_ctrl                  |50      |26      |115     |0       |0       |0        |0           |0       |0       |0       |0      |0       |
+|      dpram_inst                          |dpram                            |0       |0       |0       |4       |0       |0        |0           |0       |0       |0       |0      |0       |
+|  camera_init                             |camera_init                      |92      |40      |95      |1       |0       |0        |0           |0       |0       |0       |0      |0       |
+|    i2c_control                           |i2c_control                      |72      |19      |61      |0       |0       |0        |0           |0       |0       |0       |0      |0       |
+|      i2c_bit_shift                       |i2c_bit_shift                    |36      |0       |21      |0       |0       |0        |0           |0       |0       |0       |0      |0       |
+|    ov5640_init_table_rgb_inst            |ov5640_init_table_rgb            |0       |0       |0       |1       |0       |0        |0           |0       |0       |0       |0      |0       |
+|  pll                                     |pll                              |1       |0       |0       |0       |0       |0        |0           |0       |0       |1       |0      |0       |
+|    DR1_PHY_PLL_WRAPERR_c27ca599f4ef_Inst |DR1_PHY_PLL_WRAPERR_c27ca599f4ef |1       |0       |0       |0       |0       |0        |0           |0       |0       |1       |0      |0       |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+DataNet Average Fanout:
+
+   Index     Fanout    Nets  
+    #1         1       516   
+    #2         2       121   
+    #3         3        65   
+    #4         4        30   
+    #5        5-10     100   
+    #6       11-50      21   
+  Average     2.34           

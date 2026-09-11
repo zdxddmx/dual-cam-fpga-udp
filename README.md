@@ -30,15 +30,13 @@ OV5640(右) ─┘  以左目 hsync/vsync 为主同步               │
 ## 目录
 
 ```text
-fpga/src/       Verilog 源码：采集、同步、UDP 发送、CRC32、GMII 转换等
-fpga/sim/       testbench
-fpga/al_ip/     安路 PLL IP
-fpga/*.al       TD 工程文件
-pc/             Python 上位机（含精简版）
-doc/            摄像头同步逻辑说明
+fpga/ov5640_udp_rgmii_8_8/        完整 TD 工程（src / sim / al_ip / 约束）
+fpga/ov5640_udp_rgmii_8_8_Runs/   综合与实现结果，含可直接烧录的 bitstream
+pc/                               Python 上位机（含精简版）
+doc/                              双目同步设计说明、转接板图
 ```
 
 ## 说明
 
-仓库只保留源码与工程描述文件，未包含综合报告、bitstream、仿真波形和工具日志。
-使用前需要在 TD 中重新核对摄像头、PHY 与引脚约束。
+仓库包含完整工程与综合实现结果（含 bitstream），仅去除工具中间产物（仿真库、
+运行日志、布局数据库）。使用前需在 TD 中重新核对摄像头、PHY 与引脚约束。

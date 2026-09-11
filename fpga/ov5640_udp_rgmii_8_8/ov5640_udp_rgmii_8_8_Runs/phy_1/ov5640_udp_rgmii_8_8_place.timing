@@ -1,0 +1,933 @@
+Created by          : Tang Dynasty v5.9.112797
+                    : Copyright (c) 2012-2024 Anlogic Inc.
+Generated           : Mon Jun 17 15:50:30 2024
+
+Top Model           : ov5640_udp_rgmii
+Device              : DR1M90GEG484
+Speed               : 2
+STA coverage        : 89.94%
+Constraint File     : 
+Confidence          : Placed
+Check Corner        : Both (Slow and Fast)
+CRPR Enabled        : Yes
+Report Scheme       : 10 end point(s) per path group, 1 path(s) per end point
+
+
+Check Status
+-------------
+
+Corner   | Max      Min     
+------------------------------------
+Slow     | yes      yes     
+Fast     | yes      yes     
+
+
+Timing Status
+--------------------
+	SWNS: 16.056ns, STNS: 0.000ns
+	HWNS: 0.175ns, HTNS: 0.000ns
+	Period Check WNS: 0.000ns
+
+
+Clock Summary
+--------------------
+
+       Clock-Id:       C-Freq       Fanout   Clock-Name
+--------------------------------------------------------------------------------
+           clk0:       50.000          256   DeriveClock
+--------------------------------------------------------------------------------
+
+       Name            Type         Rise(ns)   Fall(ns)          C-Period(ns)     C-Freq(MHz)          R-Period(ns)     R-Freq(MHz)         SWNS(ns)   STNS(ns)         HWNS(ns)   HTNS(ns)         Skew(ns)           Fanout        Max-Level        CC-From    CC-To
+       clk0           local            0.000     10.000                20.000          50.000                 3.944         253.550           16.056      0.000            0.175      0.000            0.000              256                8             no       no
+
+Notes
+----------
+C-Period  :  constraint period
+C-Freq    :  constraint freq
+R-Period  :  report min period
+R-Freq    :  report fmax
+CC-From   :  has path(s) from cross-domain clock
+CC-To     :  has path(s) to cross-domain clock
+
+
+*   Clock R-Period data only takes intra-clock timing. SWNS/STNS/HWNS/HTNS take both intra-clock and inter-clock timing.
+*   If there is mismatch between R-Period and SWNS, check inter-clock timing of this clock as capture clock.
+*   SWNS/STNS/HWNS/HTNS of timing exception (SMCP/SMD) only counted in global Timing Status, not counted in Clock Summary.
+
+Intra clock domain timing
+--------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+Path Group     :     DeriveClock -> DeriveClock
+Type           :     Self
+From Clock     :     DeriveClock
+To Clock       :     DeriveClock
+Min Period     :     3.944ns
+Fmax           :     253.550MHz
+
+Statistics:
+Max            : WNS      16.056ns, TNS       0.000ns,         0 Viol Endpoints,       592 Total Endpoints,      2437 Paths Analyzed
+Min            : WNS       0.175ns, TNS       0.000ns,         0 Viol Endpoints,       592 Total Endpoints,      2437 Paths Analyzed
+----------------------------------------------------------------------------------------------------
+
+Max Paths
+----------------------------------------------------------------------------------------------------
+Slack               : 16.056ns
+Begin Point         : UDP_Send/async_fifo/async_fifo_ctrl_inst/rdside_wr_pntr_gray_dly1_reg_syn_63.clk (rising edge triggered by clock DeriveClock)
+End Point           : UDP_Send/Go_reg_syn_9.ib (rising edge triggered by clock DeriveClock)
+Check Type          : setup
+Process             : slow
+Budget              : 20.000ns
+Data Path Delay     : 3.876ns (cell 2.031ns (52%), net 1.845ns (48%))
+Clock Skew          : 0.000ns
+Logic Level         : 8 ( LUT6=2  LUT4=2  ADDER=2  LUT5=1  LUT2=1 )
+Max Fanout          : 4
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+clk2q               x074y045z5          0.175    r     0.175          pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/rdside_wr_pntr_gray_dly1_reg_syn_63.oqa
+net (fo=2)                              0.320    f     0.495          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/rdside_wr_pntr_gray_dly1[4],  ../../src/async_fifo_ctrl.v(34)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/rdside_wr_pntr_gray_dly1_reg_syn_45.ia
+LUT5                x077y045z0          0.240    r     0.735       1  pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/rdside_wr_pntr_gray_dly1_reg_syn_45.ofb
+net (fo=4)                              0.337    f     1.072          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/empty_pre_n1_syn_4,  NOFILE(0)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/rdside_wr_pntr_bin_n_syn_3.ie
+LUT2                x078y043z1          0.097    f     1.169       2  pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/rdside_wr_pntr_bin_n_syn_3.ofb
+net (fo=3)                              0.236    f     1.405          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/rdside_wr_pntr_bin_n6,  NOFILE(0)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/rdside_wr_pntr_gray_dly1_reg_syn_51.ie
+LUT4                x077y044z2          0.097    f     1.502       3  pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/rdside_wr_pntr_gray_dly1_reg_syn_51.ofb
+net (fo=1)                              0.234    f     1.736          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/rdside_wr_pntr_bin_n,  NOFILE(0)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/sub0_syn_65.id
+ADDER               x078y043z4          0.255    f     1.991       4  pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/sub0_syn_65.fco
+net (fo=1)                              0.000    f     1.991          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/sub0_syn_53,  ../../src/async_fifo_ctrl.v(123)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/sub0_syn_66.fci
+ADDER               x078y043z5          0.045    f     2.036          pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/sub0_syn_66.fco
+net (fo=1)                              0.000    f     2.036          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/sub0_syn_54,  ../../src/async_fifo_ctrl.v(123)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/sub0_syn_67.fci
+ADDER               x078y043z6          0.045    f     2.081          pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/sub0_syn_67.fco
+net (fo=1)                              0.000    f     2.081          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/sub0_syn_55,  ../../src/async_fifo_ctrl.v(123)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/sub0_syn_68.fci
+ADDER               x078y043z7          0.045    f     2.126          pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/sub0_syn_68.fco
+net (fo=1)                              0.000    f     2.126          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/sub0_syn_56,  ../../src/async_fifo_ctrl.v(123)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/sub0_syn_69.fci
+ADDER               x078y044z0          0.045    f     2.171          pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/sub0_syn_69.fco
+net (fo=1)                              0.000    f     2.171          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/sub0_syn_57,  ../../src/async_fifo_ctrl.v(123)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/sub0_syn_70.fci
+ADDER               x078y044z1          0.045    f     2.216          pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/sub0_syn_70.fco
+net (fo=1)                              0.000    f     2.216          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/sub0_syn_58,  ../../src/async_fifo_ctrl.v(123)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/sub0_syn_71.fci
+ADDER               x078y044z2          0.045    f     2.261          pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/sub0_syn_71.fco
+net (fo=1)                              0.000    f     2.261          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/sub0_syn_59,  ../../src/async_fifo_ctrl.v(123)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/sub0_syn_72.fci
+ADDER               x078y044z3          0.203    r     2.464       5  pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/sub0_syn_72.ofb
+net (fo=1)                              0.232    f     2.696          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/rdusedw_b[7],  NOFILE(0)
+                                                                      pin: UDP_Send/Go_reg_syn_11.ie
+LUT6                x077y043z5          0.141    r     2.837       6  pin: UDP_Send/Go_reg_syn_11.ofb
+net (fo=1)                              0.136    f     2.973          net: UDP_Send/Go_reg_syn_5,  ../../src/UDP_Send.v(160)
+                                                                      pin: UDP_Send/Go_reg_syn_10.ia
+LUT6                x077y043z6          0.238    r     3.211       7  pin: UDP_Send/Go_reg_syn_10.ofb
+net (fo=2)                              0.350    f     3.561          net: UDP_Send/Go_n2,  NOFILE(0)
+                                                                      pin: UDP_Send/Go_reg_syn_9.ib
+LUT4 (reg)          x081y040z2          0.315    r     3.876       8  net: UDP_Send/Go,  ../../src/UDP_Send.v(73)
+--------------------------------------------------------------------  ---------------
+Arrival                                                3.876               
+
+capture edge                           20.000    r    20.000               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.068         19.932               
+clock uncertainty                       0.000         19.932               
+clock pessimism                         0.000         19.932               
+--------------------------------------------------------------------  ---------------
+Required                                              19.932               
+--------------------------------------------------------------------  ---------------
+Slack                                                 16.056               
+
+Slack               : 16.133ns
+Begin Point         : UDP_Send/async_fifo/async_fifo_ctrl_inst/rdside_wr_pntr_gray_dly1_reg_syn_63.clk (rising edge triggered by clock DeriveClock)
+End Point           : UDP_Send/ctrl_state_reg_syn_9.imb (rising edge triggered by clock DeriveClock)
+Check Type          : setup
+Process             : slow
+Budget              : 20.000ns
+Data Path Delay     : 3.799ns (cell 1.954ns (51%), net 1.845ns (49%))
+Clock Skew          : 0.000ns
+Logic Level         : 8 ( LUT6=2  LUT5=2  ADDER=2  LUT4=1  LUT2=1 )
+Max Fanout          : 4
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+clk2q               x074y045z5          0.175    r     0.175          pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/rdside_wr_pntr_gray_dly1_reg_syn_63.oqa
+net (fo=2)                              0.320    f     0.495          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/rdside_wr_pntr_gray_dly1[4],  ../../src/async_fifo_ctrl.v(34)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/rdside_wr_pntr_gray_dly1_reg_syn_45.ia
+LUT5                x077y045z0          0.240    r     0.735       1  pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/rdside_wr_pntr_gray_dly1_reg_syn_45.ofb
+net (fo=4)                              0.337    f     1.072          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/empty_pre_n1_syn_4,  NOFILE(0)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/rdside_wr_pntr_bin_n_syn_3.ie
+LUT2                x078y043z1          0.097    f     1.169       2  pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/rdside_wr_pntr_bin_n_syn_3.ofb
+net (fo=3)                              0.236    f     1.405          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/rdside_wr_pntr_bin_n6,  NOFILE(0)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/rdside_wr_pntr_gray_dly1_reg_syn_51.ie
+LUT4                x077y044z2          0.097    f     1.502       3  pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/rdside_wr_pntr_gray_dly1_reg_syn_51.ofb
+net (fo=1)                              0.234    f     1.736          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/rdside_wr_pntr_bin_n,  NOFILE(0)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/sub0_syn_65.id
+ADDER               x078y043z4          0.255    f     1.991       4  pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/sub0_syn_65.fco
+net (fo=1)                              0.000    f     1.991          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/sub0_syn_53,  ../../src/async_fifo_ctrl.v(123)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/sub0_syn_66.fci
+ADDER               x078y043z5          0.045    f     2.036          pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/sub0_syn_66.fco
+net (fo=1)                              0.000    f     2.036          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/sub0_syn_54,  ../../src/async_fifo_ctrl.v(123)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/sub0_syn_67.fci
+ADDER               x078y043z6          0.045    f     2.081          pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/sub0_syn_67.fco
+net (fo=1)                              0.000    f     2.081          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/sub0_syn_55,  ../../src/async_fifo_ctrl.v(123)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/sub0_syn_68.fci
+ADDER               x078y043z7          0.045    f     2.126          pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/sub0_syn_68.fco
+net (fo=1)                              0.000    f     2.126          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/sub0_syn_56,  ../../src/async_fifo_ctrl.v(123)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/sub0_syn_69.fci
+ADDER               x078y044z0          0.045    f     2.171          pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/sub0_syn_69.fco
+net (fo=1)                              0.000    f     2.171          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/sub0_syn_57,  ../../src/async_fifo_ctrl.v(123)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/sub0_syn_70.fci
+ADDER               x078y044z1          0.045    f     2.216          pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/sub0_syn_70.fco
+net (fo=1)                              0.000    f     2.216          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/sub0_syn_58,  ../../src/async_fifo_ctrl.v(123)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/sub0_syn_71.fci
+ADDER               x078y044z2          0.045    f     2.261          pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/sub0_syn_71.fco
+net (fo=1)                              0.000    f     2.261          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/sub0_syn_59,  ../../src/async_fifo_ctrl.v(123)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/sub0_syn_72.fci
+ADDER               x078y044z3          0.203    r     2.464       5  pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/sub0_syn_72.ofb
+net (fo=1)                              0.232    f     2.696          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/rdusedw_b[7],  NOFILE(0)
+                                                                      pin: UDP_Send/Go_reg_syn_11.ie
+LUT6                x077y043z5          0.141    r     2.837       6  pin: UDP_Send/Go_reg_syn_11.ofb
+net (fo=1)                              0.136    f     2.973          net: UDP_Send/Go_reg_syn_5,  ../../src/UDP_Send.v(160)
+                                                                      pin: UDP_Send/Go_reg_syn_10.ia
+LUT6                x077y043z6          0.238    r     3.211       7  pin: UDP_Send/Go_reg_syn_10.ofb
+net (fo=2)                              0.350    f     3.561          net: UDP_Send/Go_n2,  NOFILE(0)
+                                                                      pin: UDP_Send/ctrl_state_reg_syn_9.imb
+LUT5 (reg)          x081y040z3          0.238    f     3.799       8  net: UDP_Send/ctrl_state[0],  ../../src/UDP_Send.v(156)
+--------------------------------------------------------------------  ---------------
+Arrival                                                3.799               
+
+capture edge                           20.000    r    20.000               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.068         19.932               
+clock uncertainty                       0.000         19.932               
+clock pessimism                         0.000         19.932               
+--------------------------------------------------------------------  ---------------
+Required                                              19.932               
+--------------------------------------------------------------------  ---------------
+Slack                                                 16.133               
+
+Slack               : 16.655ns
+Begin Point         : UDP_Send/async_fifo/dpram_inst/ramread0_syn_9.clkb (rising edge triggered by clock DeriveClock)
+End Point           : UDP_Send/GMII_TXD_reg_reg_syn_30.imb (rising edge triggered by clock DeriveClock)
+Check Type          : setup
+Process             : slow
+Budget              : 20.000ns
+Data Path Delay     : 3.277ns (cell 2.132ns (65%), net 1.145ns (35%))
+Clock Skew          : 0.000ns
+Logic Level         : 3 ( LUT5=1  LUT4=1  LUT3=1 )
+Max Fanout          : 1
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+ERAM (clk2q)        x075y048            1.700    f     1.700          pin: UDP_Send/async_fifo/dpram_inst/ramread0_syn_9.dob[0]
+net (fo=1)                              0.566    f     2.266          net: UDP_Send/async_fifo/dpram_inst/q_wire[0],  ../../src/dpram.v(16)
+                                                                      pin: UDP_Send/sel12_syn_834.ie
+LUT4                x082y041z2          0.097    f     2.363       1  pin: UDP_Send/sel12_syn_834.ofb
+net (fo=1)                              0.136    f     2.499          net: UDP_Send/sel12_syn_740,  ../../src/UDP_Send.v(276)
+                                                                      pin: UDP_Send/sel12_syn_824.ie
+LUT5                x082y041z6          0.097    f     2.596       2  pin: UDP_Send/sel12_syn_824.ofb
+net (fo=1)                              0.443    f     3.039          net: UDP_Send/sel12_syn_480,  ../../src/UDP_Send.v(276)
+                                                                      pin: UDP_Send/GMII_TXD_reg_reg_syn_30.imb
+LUT3 (reg)          x087y038z3          0.238    f     3.277       3  net: UDP_Send/GMII_TXD_reg[0],  ../../src/UDP_Send.v(75)
+--------------------------------------------------------------------  ---------------
+Arrival                                                3.277               
+
+capture edge                           20.000    r    20.000               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.068         19.932               
+clock uncertainty                       0.000         19.932               
+clock pessimism                         0.000         19.932               
+--------------------------------------------------------------------  ---------------
+Required                                              19.932               
+--------------------------------------------------------------------  ---------------
+Slack                                                 16.655               
+
+Slack               : 16.970ns
+Begin Point         : Camera_ETH_Formator/href_r2_reg_syn_4.clk (rising edge triggered by clock DeriveClock)
+End Point           : UDP_Send/async_fifo/async_fifo_ctrl_inst/full_reg_syn_3.imb (rising edge triggered by clock DeriveClock)
+Check Type          : setup
+Process             : slow
+Budget              : 20.000ns
+Data Path Delay     : 2.962ns (cell 1.571ns (53%), net 1.391ns (47%))
+Clock Skew          : 0.000ns
+Logic Level         : 5 ( LUT5=2  ADDER=2  LUT6=1 )
+Max Fanout          : 2
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+clk2q               x087y044z0          0.181    f     0.181          pin: Camera_ETH_Formator/href_r2_reg_syn_4.oqb
+net (fo=2)                              0.643    f     0.824          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/wren,  ../../src/async_fifo_ctrl.v(10)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/add0_syn_86.ic
+ADDER               x077y051z0          0.199    f     1.023       1  pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/add0_syn_86.fco
+net (fo=1)                              0.000    f     1.023          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/add0_syn_72,  ../../src/async_fifo_ctrl.v(58)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/add0_syn_87.fci
+ADDER               x077y051z1          0.045    f     1.068          pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/add0_syn_87.fco
+net (fo=1)                              0.000    f     1.068          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/add0_syn_73,  ../../src/async_fifo_ctrl.v(58)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/add0_syn_88.fci
+ADDER               x077y051z2          0.045    f     1.113          pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/add0_syn_88.fco
+net (fo=1)                              0.000    f     1.113          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/add0_syn_74,  ../../src/async_fifo_ctrl.v(58)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/add0_syn_89.fci
+ADDER               x077y051z3          0.045    f     1.158          pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/add0_syn_89.fco
+net (fo=1)                              0.000    f     1.158          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/add0_syn_75,  ../../src/async_fifo_ctrl.v(58)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/add0_syn_90.fci
+ADDER               x077y051z4          0.000    f     1.158          pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/add0_syn_90.fco_f
+net (fo=1)                              0.000    f     1.158          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/add0_syn_104,  ../../src/async_fifo_ctrl.v(58)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/add0_syn_91.fci_f
+ADDER               x077y051z5          0.000    f     1.158          pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/add0_syn_91.fco_f
+net (fo=1)                              0.000    f     1.158          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/add0_syn_105,  ../../src/async_fifo_ctrl.v(58)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/add0_syn_92.fci_f
+ADDER               x077y051z6          0.000    f     1.158          pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/add0_syn_92.fco_f
+net (fo=1)                              0.000    f     1.158          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/add0_syn_106,  ../../src/async_fifo_ctrl.v(58)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/add0_syn_93.fci_f
+ADDER               x077y051z7          0.000    f     1.158          pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/add0_syn_93.fco_f
+net (fo=1)                              0.082    f     1.240          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/add0_syn_107,  ../../src/async_fifo_ctrl.v(58)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/add0_syn_94.fci_f
+ADDER               x077y052z0          0.045    f     1.285          pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/add0_syn_94.fco
+net (fo=1)                              0.000    f     1.285          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/add0_syn_80,  ../../src/async_fifo_ctrl.v(58)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/add0_syn_95.fci
+ADDER               x077y052z1          0.045    f     1.330          pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/add0_syn_95.fco
+net (fo=1)                              0.000    f     1.330          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/add0_syn_81,  ../../src/async_fifo_ctrl.v(58)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/add0_syn_96.fci
+ADDER               x077y052z2          0.045    f     1.375          pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/add0_syn_96.fco
+net (fo=1)                              0.000    f     1.375          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/add0_syn_82,  ../../src/async_fifo_ctrl.v(58)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/add0_syn_97.fci
+ADDER               x077y052z3          0.203    r     1.578       2  pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/add0_syn_97.ofb
+net (fo=1)                              0.212    f     1.790          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/wr_pntr_next_b[11],  NOFILE(0)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/wrside_rd_pntr_gray_dly1_reg_syn_51.ia
+LUT6                x077y053z5          0.238    r     2.028       3  pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/wrside_rd_pntr_gray_dly1_reg_syn_51.ofb
+net (fo=1)                              0.136    f     2.164          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/full_n1_syn_13,  NOFILE(0)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/wrside_rd_pntr_gray_dly1_reg_syn_57.ib
+LUT5                x077y053z7          0.242    r     2.406       4  pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/wrside_rd_pntr_gray_dly1_reg_syn_57.ofb
+net (fo=1)                              0.318    f     2.724          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/full_n1_syn_15,  NOFILE(0)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/full_reg_syn_3.imb
+LUT5 (reg)          x077y050z5          0.238    f     2.962       5  net: UDP_Send/async_fifo/async_fifo_ctrl_inst/full,  ../../src/async_fifo_ctrl.v(12)
+--------------------------------------------------------------------  ---------------
+Arrival                                                2.962               
+
+capture edge                           20.000    r    20.000               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.068         19.932               
+clock uncertainty                       0.000         19.932               
+clock pessimism                         0.000         19.932               
+--------------------------------------------------------------------  ---------------
+Required                                              19.932               
+--------------------------------------------------------------------  ---------------
+Slack                                                 16.970               
+
+Slack               : 17.015ns
+Begin Point         : UDP_Send/fifo_rdreq_reg_syn_6.clk (rising edge triggered by clock DeriveClock)
+End Point           : UDP_Send/async_fifo/async_fifo_ctrl_inst/empty_pre_reg_syn_4.id (rising edge triggered by clock DeriveClock)
+Check Type          : setup
+Process             : slow
+Budget              : 20.000ns
+Data Path Delay     : 2.917ns (cell 1.542ns (52%), net 1.375ns (48%))
+Clock Skew          : 0.000ns
+Logic Level         : 5 ( LUT5=2  ADDER=2  LUT6=1 )
+Max Fanout          : 5
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+clk2q               x081y041z2          0.181    f     0.181          pin: UDP_Send/fifo_rdreq_reg_syn_6.oqb
+net (fo=2)                              0.409    f     0.590          net: UDP_Send/fifo_rdreq,  ../../src/UDP_Send.v(129)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/add1_syn_86.ic
+ADDER               x081y046z4          0.199    f     0.789       1  pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/add1_syn_86.fco
+net (fo=1)                              0.000    f     0.789          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/add1_syn_72,  ../../src/async_fifo_ctrl.v(59)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/add1_syn_87.fci
+ADDER               x081y046z5          0.045    f     0.834          pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/add1_syn_87.fco
+net (fo=1)                              0.000    f     0.834          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/add1_syn_73,  ../../src/async_fifo_ctrl.v(59)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/add1_syn_88.fci
+ADDER               x081y046z6          0.045    f     0.879          pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/add1_syn_88.fco
+net (fo=1)                              0.000    f     0.879          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/add1_syn_74,  ../../src/async_fifo_ctrl.v(59)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/add1_syn_89.fci
+ADDER               x081y046z7          0.045    f     0.924          pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/add1_syn_89.fco
+net (fo=1)                              0.000    f     0.924          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/add1_syn_75,  ../../src/async_fifo_ctrl.v(59)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/add1_syn_90.fci
+ADDER               x081y047z0          0.000    f     0.924          pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/add1_syn_90.fco_f
+net (fo=1)                              0.000    f     0.924          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/add1_syn_104,  ../../src/async_fifo_ctrl.v(59)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/add1_syn_91.fci_f
+ADDER               x081y047z1          0.000    f     0.924          pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/add1_syn_91.fco_f
+net (fo=1)                              0.000    f     0.924          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/add1_syn_105,  ../../src/async_fifo_ctrl.v(59)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/add1_syn_92.fci_f
+ADDER               x081y047z2          0.000    f     0.924          pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/add1_syn_92.fco_f
+net (fo=1)                              0.000    f     0.924          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/add1_syn_106,  ../../src/async_fifo_ctrl.v(59)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/add1_syn_93.fci_f
+ADDER               x081y047z3          0.000    f     0.924          pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/add1_syn_93.fco_f
+net (fo=1)                              0.082    f     1.006          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/add1_syn_107,  ../../src/async_fifo_ctrl.v(59)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/add1_syn_94.fci_f
+ADDER               x081y047z4          0.045    f     1.051          pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/add1_syn_94.fco
+net (fo=1)                              0.000    f     1.051          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/add1_syn_80,  ../../src/async_fifo_ctrl.v(59)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/add1_syn_95.fci
+ADDER               x081y047z5          0.045    f     1.096          pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/add1_syn_95.fco
+net (fo=1)                              0.000    f     1.096          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/add1_syn_81,  ../../src/async_fifo_ctrl.v(59)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/add1_syn_96.fci
+ADDER               x081y047z6          0.045    f     1.141          pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/add1_syn_96.fco
+net (fo=1)                              0.000    f     1.141          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/add1_syn_82,  ../../src/async_fifo_ctrl.v(59)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/add1_syn_97.fci
+ADDER               x081y047z7          0.203    r     1.344       2  pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/add1_syn_97.ofb
+net (fo=5)                              0.317    f     1.661          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/rd_pntr_next_b[11],  NOFILE(0)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/wrside_rd_pntr_gray_reg_syn_60.ia
+LUT6                x078y047z4          0.238    r     1.899       3  pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/wrside_rd_pntr_gray_reg_syn_60.ofb
+net (fo=1)                              0.136    f     2.035          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/empty_pre_n1_syn_14,  NOFILE(0)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/rd_pntr_gray_reg_reg_syn_61.ib
+LUT5                x078y047z0          0.242    r     2.277       4  pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/rd_pntr_gray_reg_reg_syn_61.ofb
+net (fo=1)                              0.431    f     2.708          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/empty_pre_n1_syn_16,  NOFILE(0)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/empty_pre_reg_syn_4.id
+LUT5 (reg)          x081y045z6          0.209    f     2.917       5  net: UDP_Send/async_fifo/async_fifo_ctrl_inst/empty_pre,  ../../src/async_fifo_ctrl.v(47)
+--------------------------------------------------------------------  ---------------
+Arrival                                                2.917               
+
+capture edge                           20.000    r    20.000               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.068         19.932               
+clock uncertainty                       0.000         19.932               
+clock pessimism                         0.000         19.932               
+--------------------------------------------------------------------  ---------------
+Required                                              19.932               
+--------------------------------------------------------------------  ---------------
+Slack                                                 17.015               
+
+Slack               : 17.126ns
+Begin Point         : UDP_Send/async_fifo/dpram_inst/ramread0_syn_18.clkb (rising edge triggered by clock DeriveClock)
+End Point           : UDP_Send/GMII_TXD_reg_reg_syn_30.imf (rising edge triggered by clock DeriveClock)
+Check Type          : setup
+Process             : slow
+Budget              : 20.000ns
+Data Path Delay     : 2.806ns (cell 2.022ns (72%), net 0.784ns (28%))
+Clock Skew          : 0.000ns
+Logic Level         : 2 ( LUT6=1  LUT3=1 )
+Max Fanout          : 1
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+ERAM (clk2q)        x079y044            1.700    f     1.700          pin: UDP_Send/async_fifo/dpram_inst/ramread0_syn_18.dob[0]
+net (fo=1)                              0.341    f     2.041          net: UDP_Send/async_fifo/dpram_inst/q_wire[6],  ../../src/dpram.v(16)
+                                                                      pin: UDP_Send/sel12_syn_836.imf
+LUT6                x082y041z0          0.089    r     2.130       1  pin: UDP_Send/sel12_syn_836.ofb
+net (fo=1)                              0.443    f     2.573          net: UDP_Send/sel12_syn_558,  ../../src/UDP_Send.v(276)
+                                                                      pin: UDP_Send/GMII_TXD_reg_reg_syn_30.imf
+LUT3 (reg)          x087y038z3          0.233    f     2.806       2  net: UDP_Send/GMII_TXD_reg[6],  ../../src/UDP_Send.v(75)
+--------------------------------------------------------------------  ---------------
+Arrival                                                2.806               
+
+capture edge                           20.000    r    20.000               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.068         19.932               
+clock uncertainty                       0.000         19.932               
+clock pessimism                         0.000         19.932               
+--------------------------------------------------------------------  ---------------
+Required                                              19.932               
+--------------------------------------------------------------------  ---------------
+Slack                                                 17.126               
+
+Slack               : 17.368ns
+Begin Point         : UDP_Send/async_fifo/dpram_inst/ramread0_syn_15.clkb (rising edge triggered by clock DeriveClock)
+End Point           : UDP_Send/GMII_TXD_reg_reg_syn_33.ie (rising edge triggered by clock DeriveClock)
+Check Type          : setup
+Process             : slow
+Budget              : 20.000ns
+Data Path Delay     : 2.564ns (cell 1.873ns (73%), net 0.691ns (27%))
+Clock Skew          : 0.000ns
+Logic Level         : 1 ( LUT5=1 )
+Max Fanout          : 1
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+ERAM (clk2q)        x075y048            1.700    f     1.700          pin: UDP_Send/async_fifo/dpram_inst/ramread0_syn_15.dob[0]
+net (fo=1)                              0.691    f     2.391          net: UDP_Send/async_fifo/dpram_inst/q_wire[4],  ../../src/dpram.v(16)
+                                                                      pin: UDP_Send/GMII_TXD_reg_reg_syn_33.ie
+LUT5 (reg)          x084y036z7          0.173    f     2.564       1  net: UDP_Send/GMII_TXD_reg[4],  ../../src/UDP_Send.v(75)
+--------------------------------------------------------------------  ---------------
+Arrival                                                2.564               
+
+capture edge                           20.000    r    20.000               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.068         19.932               
+clock uncertainty                       0.000         19.932               
+clock pessimism                         0.000         19.932               
+--------------------------------------------------------------------  ---------------
+Required                                              19.932               
+--------------------------------------------------------------------  ---------------
+Slack                                                 17.368               
+
+Slack               : 17.377ns
+Begin Point         : UDP_Send/async_fifo/dpram_inst/ramread0_syn_9.clkb (rising edge triggered by clock DeriveClock)
+End Point           : UDP_Send/GMII_TXD_reg_reg_syn_27.ie (rising edge triggered by clock DeriveClock)
+Check Type          : setup
+Process             : slow
+Budget              : 20.000ns
+Data Path Delay     : 2.555ns (cell 1.873ns (73%), net 0.682ns (27%))
+Clock Skew          : 0.000ns
+Logic Level         : 1 ( LUT5=1 )
+Max Fanout          : 1
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+ERAM (clk2q)        x075y048            1.700    f     1.700          pin: UDP_Send/async_fifo/dpram_inst/ramread0_syn_9.dob[1]
+net (fo=1)                              0.682    f     2.382          net: UDP_Send/async_fifo/dpram_inst/q_wire[1],  ../../src/dpram.v(16)
+                                                                      pin: UDP_Send/GMII_TXD_reg_reg_syn_27.ie
+LUT5 (reg)          x087y039z6          0.173    f     2.555       1  net: UDP_Send/GMII_TXD_reg[1],  ../../src/UDP_Send.v(75)
+--------------------------------------------------------------------  ---------------
+Arrival                                                2.555               
+
+capture edge                           20.000    r    20.000               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.068         19.932               
+clock uncertainty                       0.000         19.932               
+clock pessimism                         0.000         19.932               
+--------------------------------------------------------------------  ---------------
+Required                                              19.932               
+--------------------------------------------------------------------  ---------------
+Slack                                                 17.377               
+
+Slack               : 17.452ns
+Begin Point         : camera_init/delay_cnt_reg_syn_65.clk (rising edge triggered by clock DeriveClock)
+End Point           : camera_init/cnt_reg_syn_35.cea (rising edge triggered by clock DeriveClock)
+Check Type          : setup
+Process             : slow
+Budget              : 20.000ns
+Data Path Delay     : 2.480ns (cell 0.779ns (31%), net 1.701ns (69%))
+Clock Skew          : 0.000ns
+Logic Level         : 3 ( LUT6=2  LUT4=1 )
+Max Fanout          : 8
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+clk2q               x039y035z7          0.181    f     0.181          pin: camera_init/delay_cnt_reg_syn_65.oqb
+net (fo=3)                              0.234    f     0.415          net: camera_init/delay_cnt[0],  ../../src/camera_init.v(146)
+                                                                      pin: camera_init/state_b[0]_syn_14.ia
+LUT6                x040y034z2          0.238    r     0.653       1  pin: camera_init/state_b[0]_syn_14.ofb
+net (fo=1)                              0.417    f     1.070          net: camera_init/state_b[0]_syn_8,  NOFILE(0)
+                                                                      pin: camera_init/state_b[0]_syn_13.ic
+LUT6                x043y036z1          0.210    r     1.280       2  pin: camera_init/state_b[0]_syn_13.ofb
+net (fo=8)                              0.640    f     1.920          net: camera_init/state_b[0]_syn_10,  NOFILE(0)
+                                                                      pin: camera_init/wrreg_req_reg_syn_7.ic
+LUT4                x061y036z2          0.150    f     2.070       3  pin: camera_init/wrreg_req_reg_syn_7.ofb
+net (fo=8)                              0.410    f     2.480          net: camera_init/mux4_syn_2[0],  ../../src/camera_init.v(170)
+                                                                      pin: camera_init/cnt_reg_syn_35.cea
+reg                 x058y038z3          0.000    f     2.480               
+--------------------------------------------------------------------  ---------------
+Arrival                                                2.480               
+
+capture edge                           20.000    r    20.000               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.068         19.932               
+clock uncertainty                       0.000         19.932               
+clock pessimism                         0.000         19.932               
+--------------------------------------------------------------------  ---------------
+Required                                              19.932               
+--------------------------------------------------------------------  ---------------
+Slack                                                 17.452               
+
+Slack               : 17.452ns
+Begin Point         : camera_init/delay_cnt_reg_syn_65.clk (rising edge triggered by clock DeriveClock)
+End Point           : camera_init/cnt_reg_syn_35.ceb (rising edge triggered by clock DeriveClock)
+Check Type          : setup
+Process             : slow
+Budget              : 20.000ns
+Data Path Delay     : 2.480ns (cell 0.779ns (31%), net 1.701ns (69%))
+Clock Skew          : 0.000ns
+Logic Level         : 3 ( LUT6=2  LUT4=1 )
+Max Fanout          : 8
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+clk2q               x039y035z7          0.181    f     0.181          pin: camera_init/delay_cnt_reg_syn_65.oqb
+net (fo=3)                              0.234    f     0.415          net: camera_init/delay_cnt[0],  ../../src/camera_init.v(146)
+                                                                      pin: camera_init/state_b[0]_syn_14.ia
+LUT6                x040y034z2          0.238    r     0.653       1  pin: camera_init/state_b[0]_syn_14.ofb
+net (fo=1)                              0.417    f     1.070          net: camera_init/state_b[0]_syn_8,  NOFILE(0)
+                                                                      pin: camera_init/state_b[0]_syn_13.ic
+LUT6                x043y036z1          0.210    r     1.280       2  pin: camera_init/state_b[0]_syn_13.ofb
+net (fo=8)                              0.640    f     1.920          net: camera_init/state_b[0]_syn_10,  NOFILE(0)
+                                                                      pin: camera_init/wrreg_req_reg_syn_7.ic
+LUT4                x061y036z2          0.150    f     2.070       3  pin: camera_init/wrreg_req_reg_syn_7.ofb
+net (fo=8)                              0.410    f     2.480          net: camera_init/mux4_syn_2[0],  ../../src/camera_init.v(170)
+                                                                      pin: camera_init/cnt_reg_syn_35.ceb
+reg                 x058y038z3          0.000    f     2.480               
+--------------------------------------------------------------------  ---------------
+Arrival                                                2.480               
+
+capture edge                           20.000    r    20.000               
+--------------------------------------------------------------------  ---------------
+setup                                  -0.068         19.932               
+clock uncertainty                       0.000         19.932               
+clock pessimism                         0.000         19.932               
+--------------------------------------------------------------------  ---------------
+Required                                              19.932               
+--------------------------------------------------------------------  ---------------
+Slack                                                 17.452               
+
+
+
+Min Paths
+----------------------------------------------------------------------------------------------------
+Slack               : 0.175ns
+Begin Point         : camera_init/cnt_reg_syn_30.clk (rising edge triggered by clock DeriveClock)
+End Point           : camera_init/ov5640_init_table_rgb_inst/ramread0_syn_8.addrb[10] (rising edge triggered by clock DeriveClock)
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns
+Data Path Delay     : 0.220ns (cell 0.092ns (41%), net 0.128ns (59%))
+Clock Skew          : 0.000ns
+Logic Level         : 1 ( ERAM=1 )
+Max Fanout          : 7
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+clk2q               x058y037z2          0.092    f     0.092          pin: camera_init/cnt_reg_syn_30.oqa
+net (fo=7)                              0.128    f     0.220          net: camera_init/cnt[5],  ../../src/camera_init.v(49)
+                                                                      pin: camera_init/ov5640_init_table_rgb_inst/ramread0_syn_8.addrb[10]
+ERAM (reg)          x059y036            0.000    f     0.220       1       
+--------------------------------------------------------------------  ---------------
+Arrival                                                0.220               
+
+capture edge                            0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+hold                                    0.045          0.045               
+clock uncertainty                       0.000          0.045               
+clock pessimism                         0.000          0.045               
+--------------------------------------------------------------------  ---------------
+Required                                               0.045               
+--------------------------------------------------------------------  ---------------
+Slack                                                  0.175               
+
+Slack               : 0.180ns
+Begin Point         : UDP_Send/async_fifo/async_fifo_ctrl_inst/rdside_wr_pntr_gray_reg_syn_60.clk (rising edge triggered by clock DeriveClock)
+End Point           : UDP_Send/async_fifo/async_fifo_ctrl_inst/rdside_wr_pntr_gray_dly1_reg_syn_51.ima (rising edge triggered by clock DeriveClock)
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns
+Data Path Delay     : 0.222ns (cell 0.165ns (74%), net 0.057ns (26%))
+Clock Skew          : 0.000ns
+Logic Level         : 0
+Max Fanout          : 1
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+clk2q               x077y044z1          0.092    f     0.092          pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/rdside_wr_pntr_gray_reg_syn_60.oqa
+net (fo=1)                              0.057    f     0.149          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/rdside_wr_pntr_gray[2],  ../../src/async_fifo_ctrl.v(33)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/rdside_wr_pntr_gray_dly1_reg_syn_51.ima
+reg                 x077y044z2          0.073    f     0.222          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/rdside_wr_pntr_gray_dly1[2],  ../../src/async_fifo_ctrl.v(34)
+--------------------------------------------------------------------  ---------------
+Arrival                                                0.222               
+
+capture edge                            0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+hold                                    0.042          0.042               
+clock uncertainty                       0.000          0.042               
+clock pessimism                         0.000          0.042               
+--------------------------------------------------------------------  ---------------
+Required                                               0.042               
+--------------------------------------------------------------------  ---------------
+Slack                                                  0.180               
+
+Slack               : 0.180ns
+Begin Point         : UDP_Send/async_fifo/async_fifo_ctrl_inst/rdside_wr_pntr_gray_reg_syn_48.clk (rising edge triggered by clock DeriveClock)
+End Point           : UDP_Send/async_fifo/async_fifo_ctrl_inst/rdside_wr_pntr_gray_dly1_reg_syn_57.ima (rising edge triggered by clock DeriveClock)
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns
+Data Path Delay     : 0.222ns (cell 0.165ns (74%), net 0.057ns (26%))
+Clock Skew          : 0.000ns
+Logic Level         : 0
+Max Fanout          : 1
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+clk2q               x077y047z7          0.092    f     0.092          pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/rdside_wr_pntr_gray_reg_syn_48.oqa
+net (fo=1)                              0.057    f     0.149          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/rdside_wr_pntr_gray[11],  ../../src/async_fifo_ctrl.v(33)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/rdside_wr_pntr_gray_dly1_reg_syn_57.ima
+reg                 x077y047z5          0.073    f     0.222          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/rdside_wr_pntr_gray_dly1[11],  ../../src/async_fifo_ctrl.v(34)
+--------------------------------------------------------------------  ---------------
+Arrival                                                0.222               
+
+capture edge                            0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+hold                                    0.042          0.042               
+clock uncertainty                       0.000          0.042               
+clock pessimism                         0.000          0.042               
+--------------------------------------------------------------------  ---------------
+Required                                               0.042               
+--------------------------------------------------------------------  ---------------
+Slack                                                  0.180               
+
+Slack               : 0.180ns
+Begin Point         : UDP_Send/async_fifo/async_fifo_ctrl_inst/wr_pntr_gray_reg_reg_syn_45.clk (rising edge triggered by clock DeriveClock)
+End Point           : UDP_Send/async_fifo/async_fifo_ctrl_inst/rdside_wr_pntr_gray_reg_syn_45.ima (rising edge triggered by clock DeriveClock)
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns
+Data Path Delay     : 0.222ns (cell 0.165ns (74%), net 0.057ns (26%))
+Clock Skew          : 0.000ns
+Logic Level         : 0
+Max Fanout          : 1
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+clk2q               x078y052z3          0.092    f     0.092          pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/wr_pntr_gray_reg_reg_syn_45.oqa
+net (fo=1)                              0.057    f     0.149          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/wr_pntr_gray_reg[13],  ../../src/async_fifo_ctrl.v(32)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/rdside_wr_pntr_gray_reg_syn_45.ima
+reg                 x078y052z5          0.073    f     0.222          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/rdside_wr_pntr_gray[13],  ../../src/async_fifo_ctrl.v(33)
+--------------------------------------------------------------------  ---------------
+Arrival                                                0.222               
+
+capture edge                            0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+hold                                    0.042          0.042               
+clock uncertainty                       0.000          0.042               
+clock pessimism                         0.000          0.042               
+--------------------------------------------------------------------  ---------------
+Required                                               0.042               
+--------------------------------------------------------------------  ---------------
+Slack                                                  0.180               
+
+Slack               : 0.180ns
+Begin Point         : UDP_Send/async_fifo/async_fifo_ctrl_inst/wrside_rd_pntr_gray_reg_syn_54.clk (rising edge triggered by clock DeriveClock)
+End Point           : UDP_Send/async_fifo/async_fifo_ctrl_inst/wrside_rd_pntr_gray_dly1_reg_syn_45.ima (rising edge triggered by clock DeriveClock)
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns
+Data Path Delay     : 0.222ns (cell 0.165ns (74%), net 0.057ns (26%))
+Clock Skew          : 0.000ns
+Logic Level         : 0
+Max Fanout          : 1
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+clk2q               x078y050z7          0.092    f     0.092          pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/wrside_rd_pntr_gray_reg_syn_54.oqa
+net (fo=1)                              0.057    f     0.149          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/wrside_rd_pntr_gray[7],  ../../src/async_fifo_ctrl.v(41)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/wrside_rd_pntr_gray_dly1_reg_syn_45.ima
+reg                 x078y050z5          0.073    f     0.222          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/wrside_rd_pntr_gray_dly1[7],  ../../src/async_fifo_ctrl.v(42)
+--------------------------------------------------------------------  ---------------
+Arrival                                                0.222               
+
+capture edge                            0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+hold                                    0.042          0.042               
+clock uncertainty                       0.000          0.042               
+clock pessimism                         0.000          0.042               
+--------------------------------------------------------------------  ---------------
+Required                                               0.042               
+--------------------------------------------------------------------  ---------------
+Slack                                                  0.180               
+
+Slack               : 0.180ns
+Begin Point         : UDP_Send/async_fifo/async_fifo_ctrl_inst/wrside_rd_pntr_gray_reg_syn_45.clk (rising edge triggered by clock DeriveClock)
+End Point           : UDP_Send/async_fifo/async_fifo_ctrl_inst/wrside_rd_pntr_gray_dly1_reg_syn_48.ima (rising edge triggered by clock DeriveClock)
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns
+Data Path Delay     : 0.222ns (cell 0.165ns (74%), net 0.057ns (26%))
+Clock Skew          : 0.000ns
+Logic Level         : 0
+Max Fanout          : 1
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+clk2q               x078y051z5          0.092    f     0.092          pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/wrside_rd_pntr_gray_reg_syn_45.oqa
+net (fo=1)                              0.057    f     0.149          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/wrside_rd_pntr_gray[13],  ../../src/async_fifo_ctrl.v(41)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/wrside_rd_pntr_gray_dly1_reg_syn_48.ima
+reg                 x078y051z7          0.073    f     0.222          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/wrside_rd_pntr_gray_dly1[13],  ../../src/async_fifo_ctrl.v(42)
+--------------------------------------------------------------------  ---------------
+Arrival                                                0.222               
+
+capture edge                            0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+hold                                    0.042          0.042               
+clock uncertainty                       0.000          0.042               
+clock pessimism                         0.000          0.042               
+--------------------------------------------------------------------  ---------------
+Required                                               0.042               
+--------------------------------------------------------------------  ---------------
+Slack                                                  0.180               
+
+Slack               : 0.180ns
+Begin Point         : UDP_Send/async_fifo/async_fifo_ctrl_inst/wrside_rd_pntr_gray_reg_syn_57.clk (rising edge triggered by clock DeriveClock)
+End Point           : UDP_Send/async_fifo/async_fifo_ctrl_inst/wrside_rd_pntr_gray_dly1_reg_syn_54.ima (rising edge triggered by clock DeriveClock)
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns
+Data Path Delay     : 0.222ns (cell 0.165ns (74%), net 0.057ns (26%))
+Clock Skew          : 0.000ns
+Logic Level         : 0
+Max Fanout          : 1
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+clk2q               x077y048z1          0.092    f     0.092          pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/wrside_rd_pntr_gray_reg_syn_57.oqa
+net (fo=1)                              0.057    f     0.149          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/wrside_rd_pntr_gray[5],  ../../src/async_fifo_ctrl.v(41)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/wrside_rd_pntr_gray_dly1_reg_syn_54.ima
+reg                 x077y048z2          0.073    f     0.222          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/wrside_rd_pntr_gray_dly1[5],  ../../src/async_fifo_ctrl.v(42)
+--------------------------------------------------------------------  ---------------
+Arrival                                                0.222               
+
+capture edge                            0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+hold                                    0.042          0.042               
+clock uncertainty                       0.000          0.042               
+clock pessimism                         0.000          0.042               
+--------------------------------------------------------------------  ---------------
+Required                                               0.042               
+--------------------------------------------------------------------  ---------------
+Slack                                                  0.180               
+
+Slack               : 0.180ns
+Begin Point         : UDP_Send/async_fifo/async_fifo_ctrl_inst/wrside_rd_pntr_gray_reg_syn_60.clk (rising edge triggered by clock DeriveClock)
+End Point           : UDP_Send/async_fifo/async_fifo_ctrl_inst/wrside_rd_pntr_gray_dly1_reg_syn_60.ima (rising edge triggered by clock DeriveClock)
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns
+Data Path Delay     : 0.222ns (cell 0.165ns (74%), net 0.057ns (26%))
+Clock Skew          : 0.000ns
+Logic Level         : 0
+Max Fanout          : 1
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+clk2q               x078y047z4          0.092    f     0.092          pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/wrside_rd_pntr_gray_reg_syn_60.oqa
+net (fo=1)                              0.057    f     0.149          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/wrside_rd_pntr_gray[3],  ../../src/async_fifo_ctrl.v(41)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/wrside_rd_pntr_gray_dly1_reg_syn_60.ima
+reg                 x078y047z5          0.073    f     0.222          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/wrside_rd_pntr_gray_dly1[3],  ../../src/async_fifo_ctrl.v(42)
+--------------------------------------------------------------------  ---------------
+Arrival                                                0.222               
+
+capture edge                            0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+hold                                    0.042          0.042               
+clock uncertainty                       0.000          0.042               
+clock pessimism                         0.000          0.042               
+--------------------------------------------------------------------  ---------------
+Required                                               0.042               
+--------------------------------------------------------------------  ---------------
+Slack                                                  0.180               
+
+Slack               : 0.180ns
+Begin Point         : UDP_Send/async_fifo/async_fifo_ctrl_inst/wrside_rd_pntr_gray_reg_syn_63.clk (rising edge triggered by clock DeriveClock)
+End Point           : UDP_Send/async_fifo/async_fifo_ctrl_inst/wrside_rd_pntr_gray_dly1_reg_syn_63.ima (rising edge triggered by clock DeriveClock)
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns
+Data Path Delay     : 0.222ns (cell 0.165ns (74%), net 0.057ns (26%))
+Clock Skew          : 0.000ns
+Logic Level         : 0
+Max Fanout          : 1
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+clk2q               x078y049z7          0.092    f     0.092          pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/wrside_rd_pntr_gray_reg_syn_63.oqa
+net (fo=1)                              0.057    f     0.149          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/wrside_rd_pntr_gray[1],  ../../src/async_fifo_ctrl.v(41)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/wrside_rd_pntr_gray_dly1_reg_syn_63.ima
+reg                 x078y049z4          0.073    f     0.222          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/wrside_rd_pntr_gray_dly1[1],  ../../src/async_fifo_ctrl.v(42)
+--------------------------------------------------------------------  ---------------
+Arrival                                                0.222               
+
+capture edge                            0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+hold                                    0.042          0.042               
+clock uncertainty                       0.000          0.042               
+clock pessimism                         0.000          0.042               
+--------------------------------------------------------------------  ---------------
+Required                                               0.042               
+--------------------------------------------------------------------  ---------------
+Slack                                                  0.180               
+
+Slack               : 0.182ns
+Begin Point         : UDP_Send/async_fifo/async_fifo_ctrl_inst/empty_pre_reg_syn_4.clk (rising edge triggered by clock DeriveClock)
+End Point           : UDP_Send/async_fifo/async_fifo_ctrl_inst/empty_pre_reg_syn_4.imb (rising edge triggered by clock DeriveClock)
+Check Type          : hold
+Process             : fast
+Budget              : 0.000ns
+Data Path Delay     : 0.224ns (cell 0.167ns (74%), net 0.057ns (26%))
+Clock Skew          : 0.000ns
+Logic Level         : 0
+Max Fanout          : 2
+Clock Uncertainty   : 0.000ns (sdc uncertainty: 0.000ns, default uncertainty: 0.000ns)
+
+Delay Type          Location             Incr           Path   Level  Netlist Info
+--------------------------------------------------------------------  ---------------
+launch edge                             0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+clk2q               x081y045z6          0.092    f     0.092          pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/empty_pre_reg_syn_4.oqa
+net (fo=2)                              0.057    f     0.149          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/empty_pre,  ../../src/async_fifo_ctrl.v(47)
+                                                                      pin: UDP_Send/async_fifo/async_fifo_ctrl_inst/empty_pre_reg_syn_4.imb
+reg                 x081y045z6          0.075    f     0.224          net: UDP_Send/async_fifo/async_fifo_ctrl_inst/empty_pre_dly1,  ../../src/async_fifo_ctrl.v(48)
+--------------------------------------------------------------------  ---------------
+Arrival                                                0.224               
+
+capture edge                            0.000    r     0.000               
+--------------------------------------------------------------------  ---------------
+hold                                    0.042          0.042               
+clock uncertainty                       0.000          0.042               
+clock pessimism                         0.000          0.042               
+--------------------------------------------------------------------  ---------------
+Required                                               0.042               
+--------------------------------------------------------------------  ---------------
+Slack                                                  0.182               
+
+
+Inter clock domain timing
+--------------------------------------------------
+
+IP timing
+--------------------------------------------------

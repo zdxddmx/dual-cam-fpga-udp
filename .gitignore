@@ -17,8 +17,3 @@ venv/
 .vscode/
 .DS_Store
 Thumbs.db
-
-# build output
-*.bit
-*.log
-*.logw
